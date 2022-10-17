@@ -13,14 +13,14 @@ jobs:
     env:
       libraryName: libffi
       installationPath: libffi-installation
-      tagName: v2.2.1 # target tag
+      tagName: v3.4.3 # target tag
       mingwTargetZip: libffi-${{ github.ref_name }}-x86_64-posix-seh-rev0-8.1.0.zip
     steps:
       - uses: actions/checkout@v3
       
       - name: git clone
         shell: cmd
-        run: git clone --recursive https://github.com/lipnitsk/libcue.git && cd libffi && git checkout ${{ env.tagName }}
+        run: git clone --recursive https://github.com/libffi/libffi.git && cd libffi && git checkout ${{ env.tagName }}
       
       - name: Install MSYS2
         uses: msys2/setup-msys2@v2
