@@ -41,10 +41,8 @@ jobs:
             g++ --version && \
             ./autogen.sh && \
             ./configure --help && \
-            ./configure -static --enable-relocatable --prefix="$(pwd)/${{ env.installationPath }}" &&
+            ./configure --enable-portable-binary --enable-shared --enable-static --prefix="$(pwd)/${{ env.installationPath }}" && \
             make && make install
-            make && \
-            make install
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
