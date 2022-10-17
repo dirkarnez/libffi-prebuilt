@@ -41,7 +41,7 @@ jobs:
             g++ --version && \
             ./autogen.sh && \
             ./configure --help && \
-            ./configure --enable-portable-binary --enable-shared --enable-static --prefix="$(pwd)/${{ env.installationPath }}" && \
+            ./configure --enable-portable-binary --enable-shared --enable-static --disable-docs --prefix="$(pwd)/${{ env.installationPath }}" && \
             make && make install
             
       - name: Archive Release
